@@ -1,0 +1,62 @@
+table, th, td {
+    border:1px solid black;
+}
+textarea {
+    overflow-y: scroll;
+    height: 150px;
+    width: 200px;
+    resize: none; /* Remove this if you want the user to resize the textarea */
+}
+
+body {
+    background-color: #fffccc;
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+h1 {
+    text-align: center;
+    color: #fffccc;
+    font-style: italic;
+    letter-spacing: 15px;
+    padding-top: 5px;
+}
+.mainhead {
+    background-color: #a00404;
+    height: 50px;
+    border-bottom: #cc0000 solid 15px;
+}
+
+h2 {
+    background-color: #089c04;
+    padding-left: 15px;
+    color: white;
+    height: 30px;
+    padding-top: 5px;
+}
+
+strong {
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+ul {
+    font-style: italic;
+    color: #a00404;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: dashed lightgray 1px;
+}
+
+table {
+    background-color: #d0cccc;
+}
+
+h3 {
+    color: #999999;
+}
