@@ -1,17 +1,12 @@
-// function myFunction() {
-//     var x = document.getElementById("myTopnav");
-//     if (x.className === "container") {
-//       x.className += " responsive";
-//     } else {
-//       x.className = "container";
-//     }
-// }
-const gridding = document.querySelector('.gridding')
 
-fetch('../js/data.json')
+const gridding = document.querySelector('.gridding') as HTMLDivElement;
+
+
+
+fetch('../js/dist/data.json')
     .then(response => response.json())
     .then(data => {
-        for (i of data) {
+        for (let i of data) {
             const bigrectangles = document.createElement('div');
             bigrectangles.classList.add('bigrectangle');
 
@@ -179,3 +174,4 @@ fetch('../js/data.json')
             gridding.appendChild(bigrectangles);
         }
     })
+    
