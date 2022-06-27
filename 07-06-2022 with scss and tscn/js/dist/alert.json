@@ -1,0 +1,72 @@
+[
+    {
+        "name": "License for Introduction to Algebra has been assigned to your school",
+        "unread":true,
+        "course":"",
+        "class":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":21,"pm":true}
+    },
+    {
+        "name": "Lesson 3 Practice Worksheet overdue for Amy Santiago",
+        "unread":false,
+        "course":"Advanced Mathematics",
+        "class":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":5,"minute":21,"pm":true}
+    },
+    {
+        "name": "23 new students created",
+        "unread":true,
+        "course":"",
+        "class":"",
+        "date": {"day":14,"month":"Sep","year":2018},
+        "time": {"hour":1,"minute":21,"pm":true}
+    },
+    {
+        "name": "15 submissions ready for evaluation",
+        "unread":true,
+        "course":"",
+        "class":"Basics of Algebra",
+        "date": {"day":13,"month":"Sep","year":2018},
+        "time": {"hour":1,"minute":15,"pm":true}
+    },
+    {
+        "name": "License for Basic Concepts in Geometry has been assigned to your... school",
+        "unread":true,
+        "course":"",
+        "class":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":21,"pm":true}
+    },
+    {
+        "name": "Lesson 3 Practice Worksheet overdue for Sam Diego",
+        "unread":false,
+        "course":"Advanced Mathematics",
+        "class":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":30,"pm":true}
+    },
+    {
+        "name": "Lesson 3 Practice Worksheet overdue for Sam Diego",
+        "unread":true,
+        "course":"Advanced Mathematics",
+        "class":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":30,"pm":true}
+    },{
+        "name": "Lesson 3 Practice Worksheet overdue for Sam Diego",
+        "unread":false,
+        "course":"Advanced Mathematics",
+        "class":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":30,"pm":true}
+    },{
+        "name": "Lesson 3 Practice Worksheet overdue for Sam Diego",
+        "unread":false,
+        "course":"Advanced Mathematics",
+        "class":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":30,"pm":true}
+    }
+]
