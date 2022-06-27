@@ -1,0 +1,90 @@
+[
+    {
+        "pa":"Wilson Kumar",
+        "name": "No classes will be held on 21st Nov",
+        "unread":false,
+        "course":"",
+        "class":"",
+        "files":2,
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":21,"pm":true}
+    },
+    {
+        "pa":"Samson White",
+        "name": "Guest lecture on Geometry on 20th September",
+        "unread":true,
+        "course":"",
+        "class":"",
+        "files":2,
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":5,"minute":21,"pm":true}
+    },
+    {
+        "pa":"Wilson Kumar",
+        "name": "Additional course materials available on request",
+        "unread":false,
+        "course":"Mathematics 101",
+        "class":"",
+        "files":"",
+        "date": {"day":14,"month":"Sep","year":2018},
+        "time": {"hour":1,"minute":21,"pm":true}
+    },
+    {
+        "pa":"Wilson Kumar",
+        "name": "No classes will be held on 25th Dec",
+        "unread":false,
+        "course":"",
+        "class":"",
+        "files":"",
+        "date": {"day":13,"month":"Sep","year":2018},
+        "time": {"hour":1,"minute":15,"pm":true}
+    },
+    {
+        "pa":"Wilson Kumar",
+        "name": "License for Basic Concepts in Geometry has been assigned to your... school",
+        "unread":true,
+        "course":"Mathematics 101",
+        "class":"",
+        "files":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":21,"pm":true}
+    },
+    {
+        "pa":"Wilson Kumar",
+        "name": "Lesson 3 Practice Worksheet overdue for Sam Diego",
+        "unread":false,
+        "course":"Advanced Mathematics",
+        "class":"",
+        "files":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":30,"pm":true}
+    },
+    {
+        "pa":"Samson White",
+        "name": "Lesson 3 Practice Worksheet overdue for Sam Diego",
+        "unread":true,
+        "course":"Advanced Mathematics",
+        "class":"",
+        "files":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":30,"pm":true}
+    },{
+        "pa":"Samson White",
+        "name": "Lesson 3 Practice Worksheet overdue for Sam Diego",
+        "unread":false,
+        "course":"",
+        "class":"",
+        "files":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":30,"pm":true}
+    },{
+        "pa":"Samson White",
+        "name": "Lesson 3 Practice Worksheet overdue for Sam Diego",
+        "unread":false,
+        "course":"",
+        "class":"",
+        "files":"",
+        "date": {"day":15,"month":"Sep","year":2018},
+        "time": {"hour":7,"minute":30,"pm":true}
+    }
+]
