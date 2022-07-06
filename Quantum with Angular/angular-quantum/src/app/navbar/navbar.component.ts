@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AlertService} from '../core/alert.service'
+import { IAlert } from '../shared/interface';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+
+  alerts: IAlert[]=[]
 
   isActiveAlert=false;
   isActiveAnnouncement=false;
@@ -91,9 +95,20 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  constructor() { }
+
+
+  constructor(private alertService: AlertService) { }
 
   ngOnInit(): void {
+    this.getAlerts()
   }
 
+  getAlerts(): void {
+    this.alertService.getAlerts()
+    .subscribe(alerts => this.alerts = alerts);
+  }
+
+  changeActiveRead(alert:IAlert) {
+    alert.unread=!alert.unread;
+  }
 }

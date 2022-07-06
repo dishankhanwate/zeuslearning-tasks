@@ -46,59 +46,25 @@
                 <li><a href="#">admin</a></li>
             </ul>
         </li>
-        <li class="nav-items alert" (click)="changeActiveAlert()" [ngClass]="isActiveAlert ? 'active' : ''">
+        <li class="nav-items alert" [ngClass]="isActiveAlert ? 'active' : ''">
             <a href="#">
-                <span class="show alerts">
+                <span class="show alerts" (click)="changeActiveAlert()">
                     <img src="..\..\assets\quantumScreenAssets\icons\alerts.svg" alt="alerts">
                     <span>4</span>
                 </span>
             </a>
             <div class="wrapper">
                 <ul class="nshow alertul">
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="class">Class: <span>Advanced Mathematics</span></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli active">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="class">Course: <span>Advanced Mathematics</span></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
+                    <li class="alerti" *ngFor="let alert of alerts" [ngClass]="!alert.unread ? 'active' : ''">
+                        <span class="text">{{alert.name}}</span>
+                        <span class="read" (click)="changeActiveRead(alert)"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
+                        <!-- <span class="class">Class: <span>{{alert.class}}</span></span> -->
+                        <span class="class" *ngIf="alert.class">Class: <span>{{alert.class}}</span></span>
+                        <span class="class" *ngIf="alert.course">Course: <span>{{alert.course}}</span></span>
+                        <span class="datetime">{{alert.date.day}}-{{alert.date.month}}-{{alert.date.year}} at {{alert.time.hour}}:{{alert.time.minute}} {{alert.time.pm ? "pm":"am"}}</span>
                     </li>
                 </ul>
-                <div class="showAll">Show all</div>
+                <div class="showAll" >Show all</div>
 
             </div>
         </li>
@@ -110,19 +76,23 @@
                 </span>
             </a>
             <div class="wrapper">
-                <ul class="nshow alertul">
+                <ul class="nshow alertul" *ngFor="let announcement of announcements" [ngClass]="!announcement.unread ? 'active' : ''">
+                    <li class="alertli">
+                        <span class="pa"*ngIf="announcement.pa">PA: <span>{{announcement.pa}}</span></span>
+                        <span class="text">{{announcement.name}}</span>
+                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
+                        <span class="class">Course: <span>Advanced Mathematics</span></span>
+                        <span class="datetime">
+                            <span class="files"><img src="..\..\assets\quantumScreenAssets\images\paper-clip.png" alt=""><span>2 files </span>&nbspare attached</span>
+                            <span class="date">15-Sep-2018 at 07:21 pm</span>
+                        </span>
+                    </li>
                     <li class="alertli">
                         <span class="pa">PA: <span>Wilson Kumar</span></span>
                         <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
                         <span class="text">
                             License for Introduction to Algebra has been assigned to your school
                         </span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="class">Class: <span>Advanced Mathematics</span></span>
                         <span class="datetime">15-Sep-2018 at 07:21 pm</span>
                     </li>
                     <li class="alertli active">
@@ -133,31 +103,6 @@
                             <span class="files"><img src="..\..\assets\quantumScreenAssets\images\paper-clip.png" alt=""><span>2 files </span>&nbspare attached</span>
                             <span class="date">15-Sep-2018 at 07:21 pm</span>
                         </span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli">
-                        <span class="text">License for Introduction to Algebra</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
                     </li>
                 </ul>
                 <div class="showAll"><span>Show all</span> <span class="bar">|</span> <span>Create New</span></div>
