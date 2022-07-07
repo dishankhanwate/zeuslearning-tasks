@@ -1,4 +1,3 @@
-
 const lidown = document.querySelectorAll('.lidown')
 const uldown = document.querySelector('ul.down') as HTMLUListElement
 const hamburger = document.querySelector('.hamburger') as HTMLSpanElement

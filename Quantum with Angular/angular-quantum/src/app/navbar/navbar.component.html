@@ -1,6 +1,6 @@
 <nav>
     <div class="logo">
-        <a href="#">
+        <a routerLink="/dashboard">
             <img src="../../assets/quantumScreenAssets/icons/logo used in header.svg" alt="logo used in header">
         </a>
     </div>
@@ -68,40 +68,24 @@
 
             </div>
         </li>
-        <li class="nav-items announcement" (click)="changeActiveAnnouncement()" [ngClass]="isActiveAnnouncement ? 'active' : ''">
+        <li class="nav-items announcement" [ngClass]="isActiveAnnouncement ? 'active' : ''">
             <a href="#">
-                <span class="show announcements">
+                <span class="show announcements" (click)="changeActiveAnnouncement()">
                     <img src="..\..\assets\quantumScreenAssets\icons\announcements.svg" alt="announcements">
                     <span>4</span>
                 </span>
             </a>
             <div class="wrapper">
-                <ul class="nshow alertul" *ngFor="let announcement of announcements" [ngClass]="!announcement.unread ? 'active' : ''">
-                    <li class="alertli">
-                        <span class="pa"*ngIf="announcement.pa">PA: <span>{{announcement.pa}}</span></span>
+                <ul class="nshow alertul">
+                    <li class="alertli" *ngFor="let announcement of announcements" [ngClass]="!announcement.unread ? 'active' : ''">
+                        <span class="pa" *ngIf="announcement.pa">PA: <span>{{announcement.pa}}</span></span>
                         <span class="text">{{announcement.name}}</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="class">Course: <span>Advanced Mathematics</span></span>
+                        <span class="read" (click)="changeActiveRead(announcement)"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
+                        <span class="class" *ngIf="announcement.class">Class: <span>{{announcement.class}}</span></span>
+                        <span class="class" *ngIf="announcement.course">Course: <span>{{announcement.course}}</span></span>
                         <span class="datetime">
-                            <span class="files"><img src="..\..\assets\quantumScreenAssets\images\paper-clip.png" alt=""><span>2 files </span>&nbspare attached</span>
-                            <span class="date">15-Sep-2018 at 07:21 pm</span>
-                        </span>
-                    </li>
-                    <li class="alertli">
-                        <span class="pa">PA: <span>Wilson Kumar</span></span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="text">
-                            License for Introduction to Algebra has been assigned to your school
-                        </span>
-                        <span class="datetime">15-Sep-2018 at 07:21 pm</span>
-                    </li>
-                    <li class="alertli active">
-                        <span class="text">License for Introduction to Algebra has been assigned to your school</span>
-                        <span class="read"><img src="..\..\assets\quantumScreenAssets\images\unread.png" alt="alerts"></span>
-                        <span class="class">Course: <span>Advanced Mathematics</span></span>
-                        <span class="datetime">
-                            <span class="files"><img src="..\..\assets\quantumScreenAssets\images\paper-clip.png" alt=""><span>2 files </span>&nbspare attached</span>
-                            <span class="date">15-Sep-2018 at 07:21 pm</span>
+                            <span class="files" *ngIf="announcement.files"><img src="..\..\assets\quantumScreenAssets\images\paper-clip.png" alt=""><span>{{announcement.files}} files</span>&nbsp;are attached</span>
+                            <span class="date">{{announcement.date.day}}-{{announcement.date.month}}-{{announcement.date.year}} at {{announcement.time.hour}}:{{announcement.time.minute}} {{announcement.time.pm ? "pm":"am"}}</span>
                         </span>
                     </li>
                 </ul>
@@ -110,7 +94,7 @@
             </div>
         </li>
         <li class="nav-items">
-            <a href="#" class="accounts">
+            <a routerLink="/login" class="accounts">
                 <span class="show dp">
                     <img src="..\..\assets\quantumScreenAssets\images\dp.jpg" alt="announcements">
                     <span>T</span>

@@ -1,0 +1,120 @@
+<main>
+    <div class="topgreen">
+        <div class="heading">
+            <span>
+                <img style="vertical-align:middle" src="../../assets/quantumScreenAssets/icons/courses.svg" alt="courses">
+                <span><span class="number">4</span> Courses</span>
+            </span>
+            <span>
+                <img style="vertical-align:middle" src="../../assets/quantumScreenAssets/icons/classes.svg" alt="classes">
+                <span><span class="number">4</span> Classes</span>
+            </span>
+        </div>
+        <div class="coursesBorder"></div>
+    </div>
+
+    <div class="sorting">
+        <div class="text">
+            <span class="left">Showing 4 of 4 courses</span>
+            <span class="right">Sort By:&nbsp;
+                <select class="select" name="" id="">
+                    <option value="Course Name" selected>Course Name</option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alabama">Alabama</option>
+                </select>
+                <img style="vertical-align:middle" class="sortsvg" src="../../assets/quantumScreenAssets/icons/sort.svg" alt="">
+            </span> 
+        </div>
+    </div>
+    
+    <div class="gridding">
+        <div class="bigrectangle" *ngFor="let dashboard of dashboards">
+            <div class="rectangles">
+                <span class="imgspan">
+                    <img class="courseimg" src="{{dashboard.image}}">
+                </span>
+                <div class="rightcontent">
+                    <div class="namestar">
+                        <span class="coursename">{{dashboard.name}}</span>
+                        <img class="star" src="../../assets/quantumScreenAssets/icons/favourite.svg"><br>
+                    </div>
+                    <div class="subject">
+                        <span>{{dashboard.subject}}</span>
+                        <span>|</span>
+                        <span>Grade {{dashboard.grade}}</span>
+                        <span>+{{dashboard.gradeExtra}}</span>
+                    </div>
+                    <div class="info">
+                        <div class="content" *ngIf = 'dashboard.units || dashboard.lessons || dashboard.topics'>
+                            <span *ngIf = 'dashboard.units'>{{dashboard.units}}&nbsp;</span>
+                            <span *ngIf = 'dashboard.units'>Units&nbsp;&nbsp;</span>
+                            <span *ngIf = 'dashboard.lessons'>{{dashboard.lessons}}&nbsp;</span>
+                            <span *ngIf = 'dashboard.lessons'>Lessons&nbsp;&nbsp;&nbsp;</span>
+                            <span *ngIf = 'dashboard.topics'>{{dashboard.topics}}&nbsp;</span>
+                            <span *ngIf = 'dashboard.topics'>Topics</span>
+                        </div>
+                        <select name="" id="" class="select">
+                            <!-- <option hidden disabled selected value> -- select an option -- </option> -->
+                            <ng-container *ngIf="dashboard.classes">
+                                <option *ngFor="let class of dashboard.classes" value="class">{{class}}</option>
+                            </ng-container>
+                            <option hidden disabled selected value *ngIf="!dashboard.classes"> No Classes </option>
+                        </select><div class="validity">
+                            <span *ngIf = 'dashboard.students'>{{dashboard.students}} Students</span>
+                            <span *ngIf = 'dashboard.students'>|</span>
+                            <span>21-Jan-2020 - 21-Aug-2020</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottombar">
+                <img src="../../assets/quantumScreenAssets/icons/preview.svg">
+                <img src="../../assets/quantumScreenAssets/icons/manage course.svg">
+                <img src="../../assets/quantumScreenAssets/icons/grade submissions.svg">
+                <img src="../../assets/quantumScreenAssets/icons/reports.svg">
+            </div>
+        </div>
+        <!-- <div class="bigrectangle">
+            <div class="rectangles">
+                <span class="imgspan">
+                    <img class="courseimg" src="../../assets/quantumScreenAssets/images/imageMask-1.svg">
+                </span>
+                <div class="rightcontent">
+                    <div class="namestar">
+                        <span class="coursename">Acceleration</span>
+                        <img class="star" src="../../assets/quantumScreenAssets/icons/favourite.svg"><br>
+                    </div>
+                    <div class="subject">
+                        <span>Physics</span>
+                        <span>|</span>
+                        <span>Grade 7</span>
+                        <span>+2</span>
+                    </div>
+                    <div class="info">
+                        <div class="content">
+                            <span>4&nbsp;</span>
+                            <span>Units&nbsp;&nbsp;</span>
+                            <span>18&nbsp;</span>
+                            <span>Lessons&nbsp;&nbsp;&nbsp;</span>
+                            <span>4&nbsp;</span>
+                            <span>Topics</span>
+                        </div>
+                        <select name="" id="" class="select">
+                            <option value="Mr. Frank's Class B">Mr. Frank's Class B</option>
+                        </select><div class="validity">
+                            <span>50 Students</span>
+                            <span>|</span>
+                            <span>21-Jan-2020 - 21-Aug-2020</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottombar">
+                <img src="../../assets/quantumScreenAssets/icons/preview.svg">
+                <img src="../../assets/quantumScreenAssets/icons/manage course.svg">
+                <img src="../../assets/quantumScreenAssets/icons/grade submissions.svg">
+                <img src="../../assets/quantumScreenAssets/icons/reports.svg">
+            </div>
+        </div> -->
+    </div>
+</main>

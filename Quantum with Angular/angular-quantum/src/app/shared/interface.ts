@@ -1,4 +1,5 @@
 export interface IAlert {
+    id:number;
     name: string;
     unread: boolean;
     course: string;
@@ -15,13 +16,46 @@ export interface IAlert {
     }
 }
 
-// "name": "License for Introduction to Algebra has been assigned to your school",
-//         "unread":true,
-//         "course":"",
-//         "class":"",
-//         "date": {"day":15,"month":"Sep","year":2018},
-//         "time": {"hour":7,"minute":21,"pm":true}
+export interface IAnnouncement {
+    id:number;
+    pa:string;
+    name: string;
+    unread:boolean;
+    course: string;
+    class:string;
+    files:number;
+    date: {
+        day: number;
+        month: string;
+        year: number;
+    };
+    time: {
+        hour: number;
+        minute: number;
+        pm: boolean;
+    }
+}
 
-let a = {"day":15,"month":"Sep","year":2018};
-
-console.log(a)
+export interface IDashboard {
+    id:number;
+    image:string;
+    name:string;
+    subject:string;
+    grade:number;
+    gradeExtra:number;
+    units?:number;
+    lessons?:number;
+    topics?:number;
+    classes: string[];
+    students?: number;
+    dateFrom?: {
+        day: number;
+        month: string;
+        year: number;
+    };
+    dateTo?: {
+        day: number;
+        month: string;
+        year: number;
+    };
+}

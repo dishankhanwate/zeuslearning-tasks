@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AlertService} from '../core/alert.service'
-import { IAlert } from '../shared/interface';
+import {AlertService} from '../core/alert.service';
+import {AnnouncementService} from '../core/announcement.service';
+import { IAlert, IAnnouncement } from '../shared/interface';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,8 @@ import { IAlert } from '../shared/interface';
 })
 export class NavbarComponent implements OnInit {
 
-  alerts: IAlert[]=[]
+  alerts: IAlert[]=[];
+  announcements: IAnnouncement[]=[];
 
   isActiveAlert=false;
   isActiveAnnouncement=false;
@@ -97,10 +99,12 @@ export class NavbarComponent implements OnInit {
 
 
 
-  constructor(private alertService: AlertService) { }
+  constructor(private alertService: AlertService,
+    private announcementService: AnnouncementService) { }
 
   ngOnInit(): void {
-    this.getAlerts()
+    this.getAlerts();
+    this.getAnnouncements()
   }
 
   getAlerts(): void {
@@ -108,7 +112,16 @@ export class NavbarComponent implements OnInit {
     .subscribe(alerts => this.alerts = alerts);
   }
 
+  getAnnouncements(): void {
+    this.announcementService.getAnnouncements()
+    .subscribe(announcements => this.announcements = announcements);
+  }
+
   changeActiveRead(alert:IAlert) {
     alert.unread=!alert.unread;
+  }
+
+  changeAnnouncementRead(announcement:IAnnouncement) {
+    announcement.unread=!announcement.unread;
   }
 }
